@@ -549,7 +549,7 @@ class ContentContext extends AbstractDatabaseContext
                     Assert::isMap($entry);
                     Assert::string($entry['type']);
                     Assert::isMap($entry['fields']);
-                    Assert::allString($entry['fields']);
+                    Assert::allNullOrStringNotEmpty($entry['fields']);
                     $mappedData->setType($entry['type'], new SeoTypeValue($entry['type'], $entry['fields']));
                 }
 
