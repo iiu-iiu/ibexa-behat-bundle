@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.2.5
+* Fix: More invalid assertion in ibexa_seo field
+
 ## v2.2.4
 * Fix: Invalid assertion in ibexa_seo field
 * Fix: Invalid assertion in ezmatrix/ibexa_matrix field, when using indexed arrays (like it was valid in ibexa 4)
