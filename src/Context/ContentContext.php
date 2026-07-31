@@ -496,8 +496,13 @@ class ContentContext extends AbstractDatabaseContext
                 }
                 Assert::isArray($json);
                 foreach ($json as $row) {
-                    Assert::isMap($row);
-                    $rows[] = new MatrixValue\Row($row);
+                    Assert::isArray($row);
+                    // Convert array (valid v4 syntax) to map (v5 syntax)
+                    $rowAssoc = [];
+                    foreach ($row as $k => $v) {
+                        $rowAssoc[(string) $k] = $v;
+                    }
+                    $rows[] = new MatrixValue\Row($rowAssoc);
                 }
 
                 return new MatrixValue($rows);
@@ -541,10 +546,9 @@ class ContentContext extends AbstractDatabaseContext
                 $mappedData = new SeoTypesValue();
 
                 foreach ($json as $entry) {
-                    Assert::isArray($entry);
+                    Assert::isMap($entry);
                     Assert::string($entry['type']);
-                    Assert::isArray($entry['fields']);
-                    Assert::validArrayKey($entry['fields']);
+                    Assert::isMap($entry['fields']);
                     Assert::allString($entry['fields']);
                     $mappedData->setType($entry['type'], new SeoTypeValue($entry['type'], $entry['fields']));
                 }

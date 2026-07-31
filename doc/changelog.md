@@ -1,6 +1,11 @@
 # Changelog
 
+## v2.2.4
+* Fix: Invalid assertion in ibexa_seo field
+* Fix: Invalid assertion in ezmatrix/ibexa_matrix field, when using indexed arrays (like it was valid in ibexa 4)
+
 ## v2.2.3
+* Fix: Error in `the page :id contains a(n) :blockType block`
 * Improvement: Added phpstan + cs-fixer with matrix checks
 
 ## v2.2.2
