@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.2.6
+* Fix: Reset node_assignment table for admin preview to find the right siteaccess
+
 ## v2.2.5
 * Fix: More invalid assertion in ibexa_seo field
 

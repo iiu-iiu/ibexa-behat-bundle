@@ -1,0 +1,11 @@
+<?php
+
+namespace Ibexa\Seo\Value;
+
+interface SeoTypeValue {
+
+    /**
+     * @param array<string, ?string> $fields
+     */
+    public function __construct(?string $type = null, array $fields = []);
+}

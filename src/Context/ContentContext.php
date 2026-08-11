@@ -85,6 +85,7 @@ class ContentContext extends AbstractDatabaseContext
             $this->exec('DELETE FROM `ezcontentobject_name` WHERE contentobject_id >= '.$this->minId);
             $this->exec('DELETE FROM `ezcontentobject_version` WHERE contentobject_id >= '.$this->minId);
             $this->exec('DELETE FROM `ezcontentobject_tree` WHERE node_id >= '.$this->minId);
+            $this->exec('DELETE FROM `eznode_assignment` WHERE contentobject_id >= '.$this->minId);
             $this->exec('DELETE FROM `ezurlalias_ml_incr` WHERE id >= '.$this->minId);
             $this->exec('DELETE FROM `ezurlalias_ml` WHERE id >= '.$this->minId);
             $this->exec('DELETE FROM `ezcontentobject_link` WHERE from_contentobject_id >= '.$this->minId.' OR to_contentobject_id >= '.$this->minId);
@@ -98,6 +99,7 @@ class ContentContext extends AbstractDatabaseContext
             $this->exec('DELETE FROM `ibexa_content_name` WHERE contentobject_id >= '.$this->minId);
             $this->exec('DELETE FROM `ibexa_content_version` WHERE contentobject_id >= '.$this->minId);
             $this->exec('DELETE FROM `ibexa_content_tree` WHERE node_id >= '.$this->minId);
+            $this->exec('DELETE FROM `ibexa_node_assignment` WHERE contentobject_id >= '.$this->minId);
             $this->exec('DELETE FROM `ibexa_url_alias_ml_incr` WHERE id >= '.$this->minId);
             $this->exec('DELETE FROM `ibexa_url_alias_ml` WHERE id >= '.$this->minId);
             $this->exec('DELETE FROM `ibexa_content_relation` WHERE from_contentobject_id >= '.$this->minId.' OR to_contentobject_id >= '.$this->minId);
