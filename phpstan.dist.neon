@@ -9,3 +9,4 @@ parameters:
         - stubs/Content.stub
         - stubs/CriterionInterface.stub
         - stubs/SearchService.stub
+        - stubs/SeoTypeValue.stub
