@@ -358,7 +358,7 @@ class ContentContext extends AbstractDatabaseContext
 
         /** @var Content $draft */
         $draft = $this->repo->sudo(
-            fn (Repository $repo) => $repo->getContentService()->createContentDraft($contentInfo)
+            static fn (Repository $repo) => $repo->getContentService()->createContentDraft($contentInfo)
         );
 
         $updateStruct = $this->repo->getContentService()->newContentUpdateStruct();
@@ -372,7 +372,7 @@ class ContentContext extends AbstractDatabaseContext
         }
 
         $data = $this->rowsHash($table);
-        $publish = filter_var($data['_publish'] ?? true, FILTER_VALIDATE_BOOLEAN);
+        $publish = filter_var($data['_publish'] ?? true, \FILTER_VALIDATE_BOOLEAN);
         unset($data['_publish']);
 
         // Map overwritten fields
